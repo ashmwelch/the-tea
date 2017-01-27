@@ -1,0 +1,31 @@
+<div>
+  <h1>Becasue Frankly You're Out Of Touch</h1>
+
+  <h3>Sharing is caring. Fill out the form below.</h3>
+
+  <br/><br/>
+
+  <div>
+    <div>
+      <div class="form-group">
+        <label>We won't snitch:</label>
+        {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+      </div>
+      <div class="form-group">
+        <label>Don't call it a comeback:</label>
+        {{textarea value=message class="form-control" placeholder="Please serve your tea here. (At least 5 characters.)" rows="7"}}
+      </div>
+      <button class="btn btn-success btn-lg btn-block" {{action 'sendMessage'}} disabled="{{unless isValid 'disabled'}}">Send The Scoop</button>
+    </div>
+
+    {{#if responseMessage}}
+        <div class="col-md-6">
+          <br/>
+          <div class="alert alert-success">
+              <h4>Thank you! Your message was sent.</h4>
+              <p>{{responseMessage}}</p>
+          </div>
+        </div>
+    {{/if}}
+  </div>
+</div>
