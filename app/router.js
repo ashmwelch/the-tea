@@ -11,6 +11,14 @@ Router.map(function() {
   this.route('article');
   this.route('about');
   this.route('contact');
+
+  this.route('admin', function() {
+    this.route('invitations');
+  });
+
+  this.route('scenes', function() {
+    this.route('new');
+  });
 });
 
 export default Router;
